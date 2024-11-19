@@ -1,6 +1,5 @@
 // components/PartnersSection.js
 import Slider from "react-slick";
-import ford from "../../public/images/car-brands/ford.png";
 
 export default function PartnersSection() {
   const settings = {
@@ -24,20 +23,40 @@ export default function PartnersSection() {
         {/* Set container width to 80%, apply light blue background */}
         <div className="w-4/5 mx-auto bg-light-blue-500 p-4 rounded-md">
           <Slider {...settings}>
-            <div className="flex justify-center items-center bg-transparent">
-              <img src="/images/car-brands/ford.png" alt="Ford" className="w-20 h-20 object-contain bg-transparent" />
+            <div className="flex justify-center items-center bg-transparent p-4">
+              <img
+                src="/images/car-brands/ford-new1.png"
+                alt="Ford"
+                className="max-w-32 max-h-32 object-contain"
+              />
             </div>
-            <div className="flex justify-center items-center bg-transparent">
-              <img src="/images/car-brands/honda.png" alt="Honda" className="w-20 h-20 object-contain bg-transparent" />
+            <div className="flex justify-center items-center bg-transparent p-4">
+              <img
+                src="/images/car-brands/honda-new1.png"
+                alt="Honda"
+                className="max-w-32 max-h-32 object-contain"
+              />
             </div>
-            <div className="flex justify-center items-center bg-transparent">
-              <img src="/images/car-brands/toyata.png" alt="Toyota" className="w-20 h-20 object-contain bg-transparent" />
+            <div className="flex justify-center items-center bg-transparent p-4">
+              <img
+                src="/images/car-brands/toyata-new1.png"
+                alt="Toyota"
+                className="max-w-24 max-h-24 object-contain"
+              />
             </div>
-            <div className="flex justify-center items-center bg-transparent">
-              <img src="/images/car-brands/tata.png" alt="Tata" className="w-20 h-20 object-contain bg-transparent" />
+            <div className="flex justify-center items-center bg-transparent p-4">
+              <img
+                src="/images/car-brands/tata-new1.png"
+                alt="Tata"
+                className="max-w-20 max-h-20 object-contain"
+              />
             </div>
-            <div className="flex justify-center items-center bg-transparent">
-              <img src="/images/car-brands/ford.png" alt="Ford" className="w-20 h-20 object-contain bg-transparent" />
+            <div className="flex justify-center items-center bg-transparent p-4">
+              <img
+                src="/images/car-brands/ford-new1.png"
+                alt="Ford"
+                className="max-w-32 max-h-32 object-contain"
+              />
             </div>
           </Slider>
         </div>

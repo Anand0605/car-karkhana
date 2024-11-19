@@ -1,12 +1,11 @@
 import React from 'react';
-import Carfirst from '../../public/images/car-brands/car11.png'
-import Carsecond from '../../public/images/car-brands/car11.png'
-import Carthired from '../../public/images/car-brands/car11.png'
-import Whatsapp from '../../public/images/car-brands/whatsapp.png'
-import Mic from '../../public/images/car-brands/headphones-with-mic.png'
-import Mail from '../../public/images/car-brands/mail.png'
-import Chat from '../../public/images/car-brands/chat.png'
-
+import Carfirst from '../../public/images/car-brands/car12-new.png';
+import Carsecond from '../../public/images/car-brands/car1-new.png';
+import Carthired from '../../public/images/car-brands/car13-new.png';
+import Whatsapp from '../../public/images/car-brands/whatsapp.png';
+import Mic from '../../public/images/car-brands/headphones-with-mic.png';
+import Mail from '../../public/images/car-brands/mail.png';
+import Chat from '../../public/images/car-brands/chat.png';
 
 function OurService() {
     return (
@@ -15,17 +14,17 @@ function OurService() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div className="text-center">
-                    <img src={Carfirst} alt="Insurance" className="w-40 h-auto mx-auto mb-4" />
+                    <img src={Carfirst} alt="Insurance" className="w-60 h-auto mx-auto mb-4" />
                     <h3 className="text-xl font-bold">Insurance</h3>
                 </div>
 
                 <div className="text-center">
-                    <img src={Carsecond} alt="Price Compare" className="w-40 h-auto mx-auto mb-4" />
+                    <img src={Carsecond} alt="Price Compare" className="w-60 h-auto mx-auto mb-4" />
                     <h3 className="text-xl font-bold">Price Compare</h3>
                 </div>
 
                 <div className="text-center">
-                    <img src={Carthired} alt="Loans" className="w-40 h-auto mx-auto mb-4" />
+                    <img src={Carthired} alt="Loans" className="w-64 h-auto mx-auto mb-4" />
                     <h3 className="text-xl font-bold">Loans</h3>
                 </div>
             </div>
