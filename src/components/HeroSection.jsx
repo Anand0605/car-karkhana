@@ -19,8 +19,8 @@ export default function HeroSection() {
         <p className="mt-2 text-lg">All-in-one-click</p>
 
         {/* Dropdowns Section */}
-        <div className="bg-white text-black p-4 mt-6 rounded-lg mx-auto w-4/5">
-          <div className="flex justify-between gap-x-2.5 text-center text-sm">
+        <div className="bg-white text-black p-4 mt-6 rounded-lg mx-auto w-full md:w-4/5">
+          <div className="flex flex-col md:flex-row justify-between gap-4 text-center text-sm">
             {/* Brand */}
             <div className="flex-1">
               <p className="font-bold">Brand</p>
