@@ -1,18 +1,15 @@
-// components/PartnersSection.js
 import Slider from "react-slick";
 
 export default function PartnersSection() {
   const settings = {
-    dots: true,          // Show dots for navigation
-    infinite: true,      // Infinite loop
-    speed: 500,          // Transition speed
-    slidesToShow: 3,     // Number of slides visible at once
-    slidesToScroll: 1,   // Number of slides to scroll
-    autoplay: true,      // Enable autoplay
-    autoplaySpeed: 2000, // Speed of autoplay
-    centerMode: true,    // Enable center mode for smooth transition
-    focusOnSelect: true, // Focus on a slide when clicked
-    centerPadding: "10px",  // Reduce the space around the center item
+    dots: true,
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    autoplay: true,
+    speed: 2000,
+    autoplaySpeed: 2000,
+    cssEase: "linear",
   };
 
   return (
@@ -23,39 +20,39 @@ export default function PartnersSection() {
         {/* Set container width to 80%, apply light blue background */}
         <div className="w-4/5 mx-auto bg-light-blue-500 p-4 rounded-md">
           <Slider {...settings}>
-            <div className="flex justify-center items-center bg-transparent p-4">
+            <div className="flex justify-center items-center p-4">
               <img
                 src="/images/car-brands/ford-new1.png"
                 alt="Ford"
-                className="max-w-32 max-h-32 object-contain"
+                className="w-32 h-32 object-contain"
               />
             </div>
-            <div className="flex justify-center items-center bg-transparent p-4">
+            <div className="flex justify-center items-center p-4">
               <img
                 src="/images/car-brands/honda-new1.png"
                 alt="Honda"
-                className="max-w-32 max-h-32 object-contain"
+                className="w-32 h-32 object-contain"
               />
             </div>
-            <div className="flex justify-center items-center bg-transparent p-4">
+            <div className="flex justify-center items-center p-4">
               <img
                 src="/images/car-brands/toyata-new1.png"
                 alt="Toyota"
-                className="max-w-24 max-h-24 object-contain"
+                className="w-32 h-32 object-contain"
               />
             </div>
-            <div className="flex justify-center items-center bg-transparent p-4">
+            <div className="flex justify-center items-center p-4">
               <img
                 src="/images/car-brands/tata-new1.png"
                 alt="Tata"
-                className="max-w-20 max-h-20 object-contain"
+                className="w-32 h-32 object-contain"
               />
             </div>
-            <div className="flex justify-center items-center bg-transparent p-4">
+            <div className="flex justify-center items-center p-4">
               <img
                 src="/images/car-brands/ford-new1.png"
                 alt="Ford"
-                className="max-w-32 max-h-32 object-contain"
+                className="w-32 h-32 object-contain"
               />
             </div>
           </Slider>
