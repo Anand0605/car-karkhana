@@ -12,7 +12,7 @@ export default function HeroSection() {
   const [whenToSell, setWhenToSell] = useState('Immediately');
 
   return (
-    <div className="bg-blue-500 text-white px-4 py-10">
+    <div style={{ backgroundColor: '#04203c' }} className="text-white px-4 py-10">
       <div className="text-center">
         {/* Hero Text */}
         <h1 className="text-3xl font-bold">Welcome to ♦ Cars Karkhana</h1>

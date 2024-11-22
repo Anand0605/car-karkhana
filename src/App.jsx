@@ -4,6 +4,8 @@ import HeroSection from "./components/HeroSection";
 import PartnersSection from "./components/PartnerSection";
 import OurService from "./components/OurService";
 import Footer from "./components/Footer"
+import ContactForm from "./components/ContactForm";
+// import InfoSection from "./components/InfoSection";
 
 function App() {
   return (
@@ -12,6 +14,8 @@ function App() {
       <HeroSection />
       <PartnersSection />
       <OurService/>
+      {/* <InfoSection/> */}
+      <ContactForm/>
       <Footer/>
     </div>
   );
