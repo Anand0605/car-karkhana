@@ -47,18 +47,18 @@ export default function Navbar() {
             >
               <FaTimes />
             </button>
-            <ul className="space-y-6">
+            <ul className="space-y-6 flex items-center  flex-col">
               <li>
-                <a href="#sell" className="text-lg">Sell used car</a>
+                <a href="#sell" className="text-lg text-black ">Sell used car</a>
               </li>
               <li>
-                <a href="#loans" className="text-lg">Loans</a>
+                <a href="#loans" className="text-lg text-black">Loans</a>
               </li>
               <li>
-                <a href="#insurance" className="text-lg">Insurance</a>
+                <a href="#insurance" className="text-lg text-black">Insurance</a>
               </li>
               <li>
-                <a href="#contact" className="text-lg">Contact us</a>
+                <a href="#contact" className="text-lg text-black">Contact us</a>
               </li>
             </ul>
           </div>
