@@ -15,7 +15,11 @@ export default function HeroSection() {
     <div style={{ backgroundColor: '#04203c' }} className="text-white px-4 py-10">
       <div className="text-center">
         {/* Hero Text */}
-        <h1 className="text-3xl font-bold">Welcome to ♦ Cars Karkhana</h1>
+        <h1 className="text-3xl font-bold">
+  We Compare Your Car Price From 10+ Sites<br />
+  We Do the Searching, You Get the Price
+</h1>
+
         <p className="mt-2 text-lg">All-in-one-click</p>
 
         {/* Dropdowns Section */}
