@@ -1,78 +1,93 @@
 import React from 'react';
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import { FaInstagram, FaFacebookF } from 'react-icons/fa'; // Importing icons
+import { SiAppstore, SiGoogleplay } from 'react-icons/si'; // App store and Google Play icons
 
-export default function Footer() {
+const Footer = () => {
   return (
-    <footer style={{ backgroundColor: '#04203c' }} className="text-white py-10 px-4">
-      <div className="container mx-auto">
-        {/* Grid Layout */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* Section 1: Company Info */}
-          <div>
-            <h3 className="text-lg font-bold mb-4">Cars Karkhana</h3>
-            <p className="text-sm">
-              Your trusted partner for selling, buying, and insuring cars. Providing excellent service since 2023.
-            </p>
-          </div>
-
-          {/* Section 2: Quick Links */}
-          <div>
-            <h3 className="text-lg font-bold mb-4">Quick Links</h3>
-            <ul className="space-y-2">
-              <li>
-                <a href="#sell" className="hover:underline">Sell Your Car</a>
-              </li>
-              <li>
-                <a href="#loans" className="hover:underline">Car Loans</a>
-              </li>
-              <li>
-                <a href="#insurance" className="hover:underline">Insurance</a>
-              </li>
-              <li>
-                <a href="#contact" className="hover:underline">Contact Us</a>
-              </li>
-              <li>
-                <a href="#about" className="hover:underline">About Us</a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Section 3: Follow Us */}
-          <div>
-            <h3 className="text-lg font-bold mb-4">Follow Us</h3>
-            <div className="flex space-x-4">
-              <a href="#facebook" className="hover:text-gray-400">
-                <FaFacebookF />
-              </a>
-              <a href="#twitter" className="hover:text-gray-400">
-                <FaTwitter />
-              </a>
-              <a href="#instagram" className="hover:text-gray-400">
-                <FaInstagram />
-              </a>
-              <a href="#linkedin" className="hover:text-gray-400">
-                <FaLinkedinIn />
-              </a>
-            </div>
-          </div>
-        </div>
-
-        {/* Divider */}
-        <div className="border-t border-gray-600 mt-8"></div>
-
-        {/* Footer Bottom */}
-        <div className="flex flex-col md:flex-row justify-between items-center mt-4 text-sm">
-          <p>&copy; 2024 Cars Karkhana. All rights reserved.</p>
-          <ul className="flex space-x-4 mt-2 md:mt-0">
-            <li>
-              <a href="#privacy" className="hover:underline">Privacy Policy</a>
+    <footer className="bg-[#04203c] text-white py-12">
+      <div className="w-1/3 px-10 mb-4"><h3 className="text-xl font-bold mb-4">Car Karkhana</h3>
+      <p>Your trusted Partner for Selling, buying and insuring Cars Providing excellent service since 2023</p>
+      </div>
+      <div className="max-w-6xl mx-auto px-4 flex justify-between">
+        {/* Left Section: Links */}
+        <div className="w-1/3">
+          <h3 className="text-xl font-bold mb-4">Links</h3>
+          <ul>
+            <li className="mb-2">
+              <a href="#about" className="hover:underline">About us</a>
+            </li>
+            <li className="mb-2">
+              <a href="#compare" className="hover:underline">Compare</a>
+            </li>
+            <li className="mb-2">
+              <a href="#loans" className="hover:underline">Loans</a>
+            </li>
+            <li className="mb-2">
+              <a href="#insurance" className="hover:underline">Insurance</a>
+            </li>
+            <li className="mb-2">
+              <a href="#contact" className="hover:underline">Contact us</a>
+            </li>
+            <li className="mb-2">
+              <a href="#new-car" className="hover:underline">Xplor New Car</a>
             </li>
             <li>
-              <a href="#terms" className="hover:underline">Terms of Service</a>
+              <a href="#join" className="hover:underline">Join us</a>
             </li>
           </ul>
+        </div>
+
+        {/* Center Section: Popular Searches */}
+        <div className="w-1/3">
+          <h3 className="text-xl font-bold mb-4">Popular Search</h3>
+          <ul>
+            <li className="mb-2">
+              <a href="#used-car-quote" className="hover:underline">Get used car Quote</a>
+            </li>
+            <li className="mb-2">
+              <a href="#used-car-loan" className="hover:underline">Used car loan</a>
+            </li>
+            <li className="mb-2">
+              <a href="#insurance" className="hover:underline">Get Insurance</a>
+            </li>
+            <li>
+              <a href="#new-car-price" className="hover:underline">New car Price</a>
+            </li>
+          </ul>
+        </div>
+
+        {/* Right Section: Social Media and App Links */}
+        <div className="w-1/3">
+          <h3 className="text-xl font-bold mb-4">Keep us close</h3>
+          <div className="flex space-x-6 mb-6">
+            <a href="https://www.instagram.com" target="_blank" className="text-white hover:underline">
+              <FaInstagram className="text-2xl" />
+            </a>
+            <a href="https://www.facebook.com" target="_blank" className="text-white hover:underline">
+              <FaFacebookF className="text-2xl" />
+            </a>
+          </div>
+
+          {/* App Store & Google Play Links */}
+          <div className="flex space-x-4">
+            <a href="https://www.apple.com/app-store/" target="_blank">
+              <SiAppstore className="text-4xl" />
+            </a>
+            <a href="https://play.google.com" target="_blank">
+              <SiGoogleplay className="text-4xl" />
+            </a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <hr className='m-2' />
+        <div className='flex justify-between px-5 '>
+          <h2>@2024 Car-Karkhana. All right Reseverd</h2>
+          <h2>Privacy Policy Term of service</h2>
         </div>
       </div>
     </footer>
   );
-}
+};
+
+export default Footer;

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Lets from '../../public/images/car-brands/lets-talk-chats.png'
+import Lets from '../../public/images/car-brands/lets-talk-chats.png';
 
 function ContactForm() {
   const [formData, setFormData] = useState({
@@ -26,10 +26,10 @@ function ContactForm() {
   };
 
   return (
-    <div className="w-4/5 mx-auto p-8 ">
-      <div className="flex items-center justify-between">
-        {/* Left div (Contact form) with 35% width */}
-        <div className="w-[35%] p-4">
+    <div className="w-full mx-auto p-8">
+      <div className="flex flex-col md:flex-row items-center justify-between">
+        {/* Left div (Contact form) on desktop it will be on the left, on mobile it will be on top */}
+        <div className="w-full md:w-[35%] p-4">
           <h1 className="text-3xl font-bold mb-4">Contact Us</h1>
           <p className="text-gray-700 mb-6">
             With years of experience and a portfolio of successful projects, we have the expertise to deliver results-driven solutions.
@@ -67,16 +67,13 @@ function ContactForm() {
           </form>
         </div>
 
-        {/* Right div (Image) with 65% width */}
-        <div className="w-[65%] p-4 flex justify-center items-center flex-col">
-            <div>
-                
-                <h1 className="text-3xl font-bold mb-4">Lets Talk</h1>
-            </div>
+        {/* Right div (Image) on desktop it will be on the right, on mobile it will be below */}
+        <div className="w-full md:w-[65%] p-4 flex justify-center items-center flex-col mb-8 md:mb-0">
+          <h1 className="text-3xl font-bold mb-4">Let's Talk</h1>
           <img
             src={Lets}
             alt="Contact"
-            className=" object-cover  "
+            className="object-cover w-full md:w-auto"
           />
         </div>
       </div>
