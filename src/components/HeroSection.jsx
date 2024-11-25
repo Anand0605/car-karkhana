@@ -20,7 +20,7 @@ export default function HeroSection() {
   We Do the Searching, You Get the Price
 </h1>
 
-        <p className="mt-2 text-lg">All-in-one-click</p>
+        {/* <p className="mt-2 text-lg">All-in-one-click</p> */}
 
         {/* Dropdowns Section */}
         <div className="bg-white text-black p-4 mt-6 rounded-lg mx-auto w-full md:w-4/5">

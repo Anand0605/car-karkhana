@@ -5,9 +5,9 @@ import { SiAppstore, SiGoogleplay } from 'react-icons/si'; // App store and Goog
 const Footer = () => {
   return (
     <footer className="bg-[#04203c] text-white py-12">
-      <div className="w-1/3 px-10 mb-4"><h3 className="text-xl font-bold mb-4">Car Karkhana</h3>
+      {/* <div className="w-1/3 px-10 mb-4"><h3 className="text-xl font-bold mb-4">Car Karkhana</h3>
       <p>Your trusted Partner for Selling, buying and insuring Cars Providing excellent service since 2023</p>
-      </div>
+      </div> */}
       <div className="max-w-6xl mx-auto px-4 flex justify-between">
         {/* Left Section: Links */}
         <div className="w-1/3">
@@ -28,12 +28,12 @@ const Footer = () => {
             <li className="mb-2">
               <a href="#contact" className="hover:underline">Contact us</a>
             </li>
-            <li className="mb-2">
+            {/* <li className="mb-2">
               <a href="#new-car" className="hover:underline">Xplor New Car</a>
-            </li>
-            <li>
+            </li> */}
+            {/* <li>
               <a href="#join" className="hover:underline">Join us</a>
-            </li>
+            </li> */}
           </ul>
         </div>
 
