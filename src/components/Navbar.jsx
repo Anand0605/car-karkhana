@@ -28,7 +28,36 @@ export default function Navbar() {
   // Handle form submission
   const handleLoginSubmit = (e) => {
     e.preventDefault();
-    console.log('Login Data:', formData); // Log form data
+
+    // Check if all fields are filled
+    const { firstName, lastName, email, mobile } = formData;
+
+    if (!firstName || !lastName || !email || !mobile) {
+      toast.error('Please fill in all fields before submitting.', {
+        position: 'bottom-right',
+      });
+      return; // Prevent form submission
+    }
+
+    // Optional: Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      toast.error('Please enter a valid email address.', {
+        position: 'bottom-right',
+      });
+      return;
+    }
+
+    // Optional: Validate mobile number length
+    if (mobile.length !== 10) {
+      toast.error('Mobile number must be 10 digits.', {
+        position: 'bottom-right',
+      });
+      return;
+    }
+
+    // If all fields are valid, log the data and show success message
+    console.log('Login Data:', formData);
     toast.success('Login successfully!', {
       position: 'bottom-right',
     });
@@ -36,17 +65,18 @@ export default function Navbar() {
   };
 
   return (
-    <div style={{ backgroundColor: '#04203c' }} className="text-white pt-2">
+    <div style={{ backgroundColor: '#04203c' }} className="text-white w-full pt-2">
       <div className="flex justify-between items-center mt-2">
         <h1 className="text-2xl font-bold ml-8">Cars Karkhana</h1>
 
         {/* Hamburger icon for all screens */}
-        <div className="flex items-center mr-4">
+        <div className="flex items-center gap-2 mr-4">
           <div
-            className="text-white mr-3 cursor-pointer"
+            className="text-white mr-3 cursor-pointer flex"
             onClick={() => setIsLoginModalOpen(true)} // Show login form on icon click
           >
             <img src={LoginIcon} alt="Login Icon" />
+            <p className='mt-1'>Login</p>
           </div>
           <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
             {isMenuOpen ? (
@@ -55,6 +85,7 @@ export default function Navbar() {
               <FaBars className="text-white text-2xl" />
             )}
           </button>
+          <p>Menu</p>
         </div>
       </div>
       <div className="mt-2">
@@ -100,10 +131,18 @@ export default function Navbar() {
         </div>
       )}
 
-      {/* Login Modal */}
       {isLoginModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-20">
-          <div className="bg-white w-11/12 md:w-1/3 rounded-lg p-6">
+          <div className="bg-white w-11/12 md:w-1/3 rounded-lg p-6 relative">
+            {/* Close Icon */}
+            <button
+              onClick={() => setIsLoginModalOpen(false)} // Close the modal
+              className="absolute top-2 right-2 text-black text-2xl"
+            >
+              <FaTimes />
+            </button>
+
+            {/* Form Content */}
             <h2 className="text-2xl font-bold mb-4 text-center text-black">Login form</h2>
             <form onSubmit={handleLoginSubmit}>
               <div className="mb-4">
@@ -164,7 +203,7 @@ export default function Navbar() {
               </div>
               <button
                 type="submit"
-                className="w-full bg-blue-500 text-white px-4 py-2 rounded  hover:bg-blue-600"
+                className="w-full bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
               >
                 Login
               </button>
@@ -172,7 +211,6 @@ export default function Navbar() {
           </div>
         </div>
       )}
-
       {/* Toast Container */}
       <ToastContainer />
     </div>

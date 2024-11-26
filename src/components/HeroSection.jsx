@@ -1,157 +1,251 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 export default function HeroSection() {
-  // State for dropdowns
-  const [brand, setBrand] = useState('Maruti Suzuki');
-  const [rto, setRto] = useState('Gurgaon');
-  const [year, setYear] = useState('2021');
-  const [model, setModel] = useState('Swift');
-  const [variant, setVariant] = useState('LXI [2021]');
-  const [owner, setOwner] = useState('1st owner');
-  const [kmDriven, setKmDriven] = useState('10,000 Km');
-  const [whenToSell, setWhenToSell] = useState('Immediately');
+  const [openTab, setOpenTab] = useState(null); // Track the open tab
+  const [selectedValues, setSelectedValues] = useState({
+    Brand: "Brand",
+    RTO: "RTO",
+    Year: "Year",
+    Model: "Model",
+    Variant: "Variant",
+    Owner: "Owner",
+    "KM Driven": "KM Driven",
+    "When to Sell": "When to Sell",
+  });
+
+  const options = {
+    Brand: [
+      "Maruti Suzuki",
+      "Nissan",
+      "Toyota",
+      "Lamborghini",
+      "Ford",
+      "Mercedes",
+      "Audi",
+      "Kia",
+      "Volkswagen",
+      "BMW",
+      "Renault",
+      "Mitsubishi",
+    ],
+    RTO: ["Gurgaon", "Delhi", "Noida", "Mumbai", "Bangalore"],
+    Year: ["2023", "2022", "2021", "2020", "2019"],
+    Model: ["Swift", "Alto", "Baleno", "Creta", "i20"],
+    Variant: ["LXI", "VXI", "ZXI", "Alpha", "Beta"],
+    Owner: ["1st Owner", "2nd Owner", "3rd Owner", "4th Owner"],
+    "KM Driven": ["10,000 Km", "20,000 Km", "30,000 Km", "40,000 Km"],
+    "When to Sell": ["Immediately", "In 1 Week", "In 1 Month"],
+  };
+
+  const toggleTab = (tab) => {
+    setOpenTab((prevTab) => (prevTab === tab ? null : tab)); // Toggle tab dropdown
+  };
+
+  const handleSelect = (field, value) => {
+    setSelectedValues((prevValues) => ({
+      ...prevValues,
+      [field]: value,
+    }));
+    setOpenTab(null); // Close the dropdown after selection
+  };
 
   return (
-    <div style={{ backgroundColor: '#04203c' }} className="text-white px-4 py-16">
-      <div className='px-32'>
-          {/* Hero Text */}
-          <h1 className="text-3xl font-bold">
-            We Compare Your Car Price From 10+ Sites
-          </h1>
-          <p className='mt-1 text-2xl font-semibold'>We Do the Searching, You Get the Price</p>
+    <div className="flex justify-start items-center flex-col text-white px-4 w-full min-h-[28rem] py-16 bg-bg-primary">
+
+      <div className="flex flex-col w-[85%] justify-start mb-2">
+        <p className="text-xl">We Compare your car price from 10+ site</p>
+        <p className="text-sm">we will do the searching you will be get price</p>
+      </div>
+      <div className="w-[85%] relative">
+        {/* Tab Section */}
+        <div className="w-full text-black  bg-white rounded flex items-center">
+          {Object.keys(selectedValues).map((key) => (
+            <div className="border border-blue-300 px-2 py-2">
+              <span
+                key={key}
+                onClick={() => toggleTab(key)}
+                className={`cursor-pointer px-3 text-nowrap ${openTab === key
+                    ? "border-b-4 border-blue-500"
+                    : ""
+                  } transition-all duration-300`}
+              >
+
+                {selectedValues[key]}
+              </span>
+            </div>
+          ))}
+
+          <button className="bg-blue-400  text-white px-2 py-2 ml-5">Continue</button>
         </div>
-      <div className="text-center">
-        
 
-        {/* <p className="mt-2 text-lg">All-in-one-click</p> */}
-
-        {/* Dropdowns Section */}
-        <div className="bg-white text-black p-4 mt-6 rounded-lg mx-auto w-full md:w-4/5">
-          <div className="flex flex-col md:flex-row justify-between gap-4 text-center text-sm">
-            {/* Brand */}
-            <div className="flex-1">
-              <p className="font-bold">Brand</p>
-              <select
-                value={brand}
-                onChange={(e) => setBrand(e.target.value)}
-                className="p-2 border rounded-lg w-full"
+        {/* Dropdown Section */}
+        {openTab && (
+          <div className="absolute w-full top-10 bg-white p-4 flex gap-5 flex-wrap border shadow-md">
+            {options[openTab].map((option, idx) => (
+              <span
+                key={idx}
+                onClick={() => handleSelect(openTab, option)}
+                className="cursor-pointer bg-gray-300 p-2 hover:bg-green-400 rounded"
               >
-                <option value="Maruti Suzuki">Maruti Suzuki</option>
-                <option value="Hyundai">Hyundai</option>
-                <option value="Tata">Tata</option>
-              </select>
-            </div>
-
-            {/* RTO */}
-            <div className="flex-1">
-              <p className="font-bold">RTO</p>
-              <select
-                value={rto}
-                onChange={(e) => setRto(e.target.value)}
-                className="p-2 border rounded-lg w-full"
-              >
-                <option value="Gurgaon">Gurgaon</option>
-                <option value="Delhi">Delhi</option>
-                <option value="Noida">Noida</option>
-              </select>
-            </div>
-
-            {/* Year */}
-            <div className="flex-1">
-              <p className="font-bold">Year</p>
-              <select
-                value={year}
-                onChange={(e) => setYear(e.target.value)}
-                className="p-2 border rounded-lg w-full"
-              >
-                <option value="2021">2021</option>
-                <option value="2020">2020</option>
-                <option value="2019">2019</option>
-              </select>
-            </div>
-
-            {/* Model */}
-            <div className="flex-1">
-              <p className="font-bold">Model</p>
-              <select
-                value={model}
-                onChange={(e) => setModel(e.target.value)}
-                className="p-2 border rounded-lg w-full"
-              >
-                <option value="Swift">Swift</option>
-                <option value="Alto">Alto</option>
-                <option value="Baleno">Baleno</option>
-              </select>
-            </div>
-
-            {/* Variant */}
-            <div className="flex-1">
-              <p className="font-bold">Variant</p>
-              <select
-                value={variant}
-                onChange={(e) => setVariant(e.target.value)}
-                className="p-2 border rounded-lg w-full"
-              >
-                <option value="LXI [2021]">LXI [2021]</option>
-                <option value="VXI [2021]">VXI [2021]</option>
-                <option value="ZXI [2021]">ZXI [2021]</option>
-              </select>
-            </div>
-
-            {/* Owner */}
-            <div className="flex-1">
-              <p className="font-bold">Owner</p>
-              <select
-                value={owner}
-                onChange={(e) => setOwner(e.target.value)}
-                className="p-2 border rounded-lg w-full"
-              >
-                <option value="1st owner">1st owner</option>
-                <option value="2nd owner">2nd owner</option>
-                <option value="3rd owner">3rd owner</option>
-              </select>
-            </div>
-
-            {/* KM Driven */}
-            <div className="flex-1">
-              <p className="font-bold">KM Driven</p>
-              <select
-                value={kmDriven}
-                onChange={(e) => setKmDriven(e.target.value)}
-                className="p-2 border rounded-lg w-full"
-              >
-                <option value="10,000 Km">10,000 Km</option>
-                <option value="20,000 Km">20,000 Km</option>
-                <option value="30,000 Km">30,000 Km</option>
-              </select>
-            </div>
-
-            {/* When to Sell */}
-            <div className="flex-1">
-              <p className="font-bold">When to sell</p>
-              <select
-                value={whenToSell}
-                onChange={(e) => setWhenToSell(e.target.value)}
-                className="p-2 border rounded-lg w-full"
-              >
-                <option value="Immediately">Immediately</option>
-                <option value="In 1 week">In 1 week</option>
-                <option value="In 1 month">In 1 month</option>
-              </select>
-            </div>
-
-            {/* Continue Button */}
-            <div className="flex-1">
-              <button
-                onClick={() => alert(`Details submitted:\nBrand: ${brand}`)}
-                className="bg-blue-600 text-white px-4 py-2 mt-4 rounded-lg w-full"
-              >
-                Continue
-              </button>
-            </div>
+                {option}
+              </span>
+            ))}
           </div>
-        </div>
+        )}
       </div>
     </div>
   );
 }
+
+
+
+
+
+
+// const DropdownExample = () => {
+//   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+//   const [selectedBrand, setSelectedBrand] = useState("Brand");
+//   const brands = ["Toyota", "Honda", "Ford", "BMW", "Mercedes"];
+
+//   const toggleDropdown = () => {
+//     setIsDropdownOpen(!isDropdownOpen);
+//   };
+
+//   const handleSelectBrand = (brand) => {
+//     setSelectedBrand(brand);
+//     setIsDropdownOpen(false);
+//   };
+
+//   return (
+//     <div className="p-6">
+//       <div className="flex items-center gap-4 border border-gray-300 p-4 rounded-lg">
+//         {/* Brand Dropdown */}
+//         <div className="relative">
+//           <div
+//             className="border border-gray-400 px-4 py-2 rounded-md cursor-pointer"
+//             onClick={toggleDropdown}
+//           >
+//             {selectedBrand}
+//           </div>
+//           {isDropdownOpen && (
+//             <div className="absolute mt-2 w-[50rem] border border-gray-300 bg-white shadow-lg rounded-md z-10">
+//               {brands.map((brand, index) => (
+//                 <div
+//                   key={index}
+//                   className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+//                   onClick={() => handleSelectBrand(brand)}
+//                 >
+//                   {brand}
+//                 </div>
+//               ))}
+//             </div>
+//           )}
+//         </div>
+
+//         {/* Other Fields */}
+//         <div className="border border-gray-400 px-4 py-2 rounded-md cursor-default">
+//           RTO
+//         </div>
+//         <div className="border border-gray-400 px-4 py-2 rounded-md cursor-default">
+//           Year
+//         </div>
+//         <div className="border border-gray-400 px-4 py-2 rounded-md cursor-default">
+//           Model
+//         </div>
+//         <div className="border border-gray-400 px-4 py-2 rounded-md cursor-default">
+//           Variant
+//         </div>
+//         <div className="border border-gray-400 px-4 py-2 rounded-md cursor-default">
+//           Owner
+//         </div>
+//         <div className="border border-gray-400 px-4 py-2 rounded-md cursor-default">
+//           KM Driven
+//         </div>
+//         <div className="border border-gray-400 px-4 py-2 rounded-md cursor-default">
+//           When to Sell
+//         </div>
+//         <div className="border border-gray-400 px-4 py-2 rounded-md cursor-default">
+//           Continue
+//         </div>
+//       </div>
+//     </div>
+//   );
+// ;
+
+
+
+// }
+
+
+// const [openDropdown, setOpenDropdown] = useState(null);
+
+//   const [selectedValues, setSelectedValues] = useState({
+//     brand: "Brand",
+//     rto: "RTO",
+//     year: "Year",
+//     model: "Model",
+//     variant: "Variant",
+//     owner: "Owner",
+//     kmDriven: "KM Driven",
+//     whenToSell: "When to Sell",
+//   });
+
+//   const options = {
+//     brand: ["Toyota", "Honda", "Ford", "BMW", "Mercedes"],
+//     rto: ["Gurgaon", "Delhi", "Noida", "Mumbai", "Bangalore"],
+//     year: ["2023", "2022", "2021", "2020", "2019"],
+//     model: ["Swift", "Alto", "Baleno", "Creta", "i20"],
+//     variant: ["LXI", "VXI", "ZXI", "Alpha", "Beta"],
+//     owner: ["1st Owner", "2nd Owner", "3rd Owner", "4th Owner"],
+//     kmDriven: ["10,000 Km", "20,000 Km", "30,000 Km", "40,000 Km"],
+//     whenToSell: ["Immediately", "In 1 Week", "In 1 Month"],
+//   };
+
+//   const toggleDropdown = (field) => {
+//     setOpenDropdown((prevField) => (prevField === field ? null : field));
+//   };
+
+//   const handleSelect = (field, value) => {
+//     setSelectedValues((prevValues) => ({
+//       ...prevValues,
+//       [field]: value,
+//     }));
+//     setOpenDropdown(null); // Close the dropdown after selecting a value
+//   };
+
+//   return (
+//     <div className="p-6">
+//       <div className="flex items-center gap-4 border border-gray-300 p-4 rounded-lg">
+//         {Object.keys(options).map((field, index) => (
+//           <div className="relative" key={index}>
+//             {/* Dropdown Trigger */}
+//             <div
+//               className="border border-gray-400 px-4 py-2 rounded-md cursor-pointer"
+//               onClick={() => toggleDropdown(field)}
+//             >
+//               {selectedValues[field]}
+//             </div>
+//             {/* Dropdown Menu */}
+//             {openDropdown === field && (
+//               <div className="absolute mt-2 w-[15rem] border border-gray-300 bg-white shadow-lg rounded-md z-10">
+//                 {options[field].map((option, idx) => (
+//                   <div
+//                     key={idx}
+//                     className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+//                     onClick={() => handleSelect(field, option)}
+//                   >
+//                     {option}
+//                   </div>
+//                 ))}
+//               </div>
+//             )}
+//           </div>
+//         ))}
+//         {/* Continue Button */}
+//         <div className="border border-gray-400 px-4 py-2 rounded-md cursor-pointer bg-blue-600 text-white">
+//           Continue
+//         </div>
+//       </div>
+//     </div>
+//   );
+// }

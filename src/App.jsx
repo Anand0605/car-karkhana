@@ -9,7 +9,7 @@ import ContactForm from "./components/ContactForm";
 
 function App() {
   return (
-    <div className="bg-white">
+    <div className="bg-white w-full flex flex-col justify-center items-center">
       <Navbar />
       <HeroSection />
       {/* <PartnersSection /> */}

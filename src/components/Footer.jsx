@@ -7,14 +7,16 @@ const Footer = () => {
     <footer className="bg-[#04203c] text-white py-12">
 
 
-      <div className="max-w-6xl mx-auto px-4 flex justify-normal">
+      <div className="max-w-6xl mx-auto flex justify-evenly  ">
 
-        <div className=" px-10 mb-4"><h3 className="text-xl font-bold mb-4">Car Karkhana</h3>
+        <div className="w-1/2">
+          <h3 className="text-xl font-bold mb-4 text-wrap">Car Karkhana</h3>
           <p>Your trusted Partner for Selling, buying and insuring Cars Providing excellent service since 2023</p>
         </div>
 
-        {/* Left Section: Links */}
-        <div className="w-1/3">
+        <div className='flex gap-10'>
+          {/* Left Section: Links */}
+        <div className="w-1/3 ml-12">
           <h3 className="text-xl font-bold mb-4">Links</h3>
           <ul>
             <li className="mb-2">
@@ -81,6 +83,7 @@ const Footer = () => {
               <SiGoogleplay className="text-4xl" />
             </a>
           </div>
+        </div>
         </div>
       </div>
       <div>
