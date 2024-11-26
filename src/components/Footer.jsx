@@ -5,10 +5,14 @@ import { SiAppstore, SiGoogleplay } from 'react-icons/si'; // App store and Goog
 const Footer = () => {
   return (
     <footer className="bg-[#04203c] text-white py-12">
-      {/* <div className="w-1/3 px-10 mb-4"><h3 className="text-xl font-bold mb-4">Car Karkhana</h3>
-      <p>Your trusted Partner for Selling, buying and insuring Cars Providing excellent service since 2023</p>
-      </div> */}
-      <div className="max-w-6xl mx-auto px-4 flex justify-between">
+
+
+      <div className="max-w-6xl mx-auto px-4 flex justify-normal">
+
+        <div className=" px-10 mb-4"><h3 className="text-xl font-bold mb-4">Car Karkhana</h3>
+          <p>Your trusted Partner for Selling, buying and insuring Cars Providing excellent service since 2023</p>
+        </div>
+
         {/* Left Section: Links */}
         <div className="w-1/3">
           <h3 className="text-xl font-bold mb-4">Links</h3>
@@ -80,7 +84,9 @@ const Footer = () => {
         </div>
       </div>
       <div>
-        <hr className='m-2' />
+
+        <div><hr className='m-2' /></div>
+
         <div className='flex justify-between px-5 '>
           <h2>@2024 Car-Karkhana. All right Reseverd</h2>
           <h2>Privacy Policy Term of service</h2>

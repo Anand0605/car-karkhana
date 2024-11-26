@@ -104,7 +104,7 @@ export default function Navbar() {
       {isLoginModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-20">
           <div className="bg-white w-11/12 md:w-1/3 rounded-lg p-6">
-            <h2 className="text-2xl font-bold mb-4 text-center">Login</h2>
+            <h2 className="text-2xl font-bold mb-4 text-center text-black">Login form</h2>
             <form onSubmit={handleLoginSubmit}>
               <div className="mb-4">
                 <label htmlFor="firstName" className="block text-gray-700 font-medium">
@@ -116,7 +116,7 @@ export default function Navbar() {
                   name="firstName"
                   value={formData.firstName}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 text-black focus:ring-blue-400"
                   placeholder="Enter your first name"
                 />
               </div>
@@ -130,7 +130,7 @@ export default function Navbar() {
                   name="lastName"
                   value={formData.lastName}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 text-black focus:ring-blue-400"
                   placeholder="Enter your last name"
                 />
               </div>
@@ -144,7 +144,7 @@ export default function Navbar() {
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 text-black focus:ring-blue-400"
                   placeholder="Enter your email"
                 />
               </div>
@@ -153,18 +153,18 @@ export default function Navbar() {
                   Mobile
                 </label>
                 <input
-                  type="text"
+                  type="number"
                   id="mobile"
                   name="mobile"
                   value={formData.mobile}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 text-black focus:ring-blue-400"
                   placeholder="Enter your mobile number"
                 />
               </div>
               <button
                 type="submit"
-                className="w-full bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+                className="w-full bg-blue-500 text-white px-4 py-2 rounded  hover:bg-blue-600"
               >
                 Login
               </button>
