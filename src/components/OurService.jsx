@@ -1,77 +1,110 @@
-// import React from 'react';
-// import Carfirst from '../../public/images/car-brands/car12-new.png';
-// import Carsecond from '../../public/images/car-brands/car1-new.png';
-// import Carthired from '../../public/images/car-brands/car13-new.png';
-// import Whatsapp from '../../public/images/car-brands/whatsapp.png';
-// import Mic from '../../public/images/car-brands/headphones-with-mic.png';
-// import Mail from '../../public/images/car-brands/mail.png';
-// import Chat from '../../public/images/car-brands/chat.png';
+import React from 'react';
+import Carfirst from '../../public/images/car-brands/Carfirst1.png';
+import Carsecond from '../../public/images/car-brands/Price-com.png';
+import Carthired from '../../public/images/car-brands/Loans.png';
+import Whatsapp from '../../public/images/car-brands/whatsapp.png';
+import Mic from '../../public/images/car-brands/headphones-with-mic.png';
+import Mail from '../../public/images/car-brands/mail.png';
+import Chat from '../../public/images/car-brands/chat.png';
 
-// function OurService() {
-//     return (
-//         <div className="bg-white p-10">
-//             <h2 className="text-2xl font-bold text-center mb-8">Our Services</h2>
+function OurService() {
+    return (
+        <div className="bg-white p-10">
+            <div>
+                <div className="my-10 text-center">
+                    <h2 className="relative text-xl font-bold">
+                        <span className="absolute left-0  top-2/4 w-[44%] border-t-2 border-blue-500"></span>
+                        <span className="relative z-10 px-5">Our Services</span>
+                        <span className="absolute right-0  top-2/4 w-[44%] border-t-2 border-blue-500"></span>
+                    </h2>
+                </div>
 
-//             {/* Services Section */}
-//             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-//                 <div className="text-center">
-//                     <img src={Carfirst} alt="Insurance" className="w-60 h-auto mx-auto mb-4" />
-//                     <h3 className="text-xl font-bold">Insurance</h3>
-//                 </div>
-//                 <div className="text-center">
-//                     <img src={Carsecond} alt="Price Compare" className="w-60 h-auto mx-auto mb-4" />
-//                     <h3 className="text-xl font-bold">Price Compare</h3>
-//                 </div>
-//                 <div className="text-center">
-//                     <img src={Carthired} alt="Loans" className="w-64 h-auto mx-auto mb-4" />
-//                     <h3 className="text-xl font-bold">Loans</h3>
-//                 </div>
-//             </div>
+                {/* Services Section */}
+                <div className="flex justify-around space-x-8 mt-10">
+                    {/* Insurance Card */}
+                    <div className="text-center">
+                        <img
+                            src={Carfirst}
+                            alt="Insurance"
+                            className="w-40 h-40 mx-auto"
+                        />
+                        <h3 className="text-lg font-semibold mt-4">Insurance</h3>
+                    </div>
 
-//             {/* Assistance Section */}
-//             <div className="mt-16">
-//                 <h2 className="text-2xl font-bold text-center mb-8">Assistance</h2>
+                    {/* Price Compare Card */}
+                    <div className="text-center">
+                        <img
+                            src={Carsecond}
+                            alt="Price Compare"
+                            className="w-40 h-40 mx-auto"
+                        />
+                        <h3 className="text-lg font-semibold mt-4">Price Compare</h3>
+                    </div>
 
-//                 <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-//                     {/* WhatsApp */}
-//                     <div className="flex items-center gap-4">
-//                         <img src={Whatsapp} alt="WhatsApp" className="w-10 h-auto" />
-//                         <div>
-//                             <h3 className="text-lg font-bold">Ask us on WhatsApp!</h3>
-//                             <p className="text-sm">Get instant support via experts</p>
-//                         </div>
-//                     </div>
+                    {/* Loans Card */}
+                    <div className="text-center">
+                        <img
+                            src={Carthired}
+                            alt="Loans"
+                            className="w-40 h-40 mx-auto"
+                        />
+                        <h3 className="text-lg font-semibold mt-4">Loans</h3>
+                    </div>
+                </div>
+            </div>
 
-//                     {/* Callback */}
-//                     <div className="flex items-center gap-4">
-//                         <img src={Mic} alt="Callback" className="w-10 h-auto" />
-//                         <div>
-//                             <h3 className="text-lg font-bold">Request a callback</h3>
-//                             <p className="text-sm">Our team will contact you shortly</p>
-//                         </div>
-//                     </div>
+            {/* Assistance Section */}
+            <div className="mt-16">
+                <div className="my-10 text-center">
+                    <h2 className="relative text-xl font-bold">
+                        <span className="absolute left-0  top-2/4 w-[44%] border-t-2 border-blue-500"></span>
+                        <span className="relative z-10 px-5">Assistance</span>
+                        <span className="absolute right-0  top-2/4 w-[44%] border-t-2 border-blue-500"></span>
+                    </h2>
+                </div>
 
-//                     {/* FAQs */}
-//                     <div className="flex items-center gap-4">
-//                         <img src={Chat} alt="FAQs" className="w-10 h-auto" />
-//                         <div>
-//                             <h3 className="text-lg font-bold">FAQs</h3>
-//                             <p className="text-sm">Get your doubts cleared</p>
-//                         </div>
-//                     </div>
+                <div className="flex justify-around gap-8 ">
+                    {/* WhatsApp */}
+                    <div className="flex items-center gap-4">
+                        <img src={Whatsapp} alt="WhatsApp" className="w-8 h-8" />
+                        <div>
+                            <h3 className="text-lg font-bold">Ask us on WhatsApp!</h3>
+                            <p className="text-sm">Get instant support via experts</p>
+                        </div>
+                    </div>
 
-//                     {/* Mail */}
-//                     <div className="flex items-center gap-4">
-//                         <img src={Mail} alt="Mail us" className="w-10 h-auto" />
-//                         <div>
-//                             <h3 className="text-lg font-bold">Mail us</h3>
-//                             <p className="text-sm">Reach out to us</p>
-//                         </div>
-//                     </div>
-//                 </div>
-//             </div>
-//         </div>
-//     );
-// }
+                    {/* Callback */}
+                    <div className="flex items-center gap-4">
+                        <img src={Mic} alt="Callback" className="w-8 h-8" />
+                        <div>
+                            <h3 className="text-lg font-bold">Request a callback</h3>
+                            <p className="text-sm">Our team will contact you shortly</p>
+                        </div>
+                    </div>
 
-// export default OurService;
+                    {/* FAQs */}
+                    <div className="flex items-center gap-4">
+                        <img src={Chat} alt="FAQs" className="w-8 h-8" />
+                        <div>
+                            <h3 className="text-lg font-bold">FAQs</h3>
+                            <p className="text-sm">Get your doubts cleared</p>
+                        </div>
+                    </div>
+
+                    {/* Mail */}
+                    <div className="flex items-center gap-4">
+                        <img src={Mail} alt="Mail us" className="w-8 h-8" />
+                        <div>
+                            <h3 className="text-lg font-bold">Mail us</h3>
+                            <p className="text-sm">Reach out to us</p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    );
+}
+
+export default OurService;

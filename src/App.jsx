@@ -2,7 +2,7 @@
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
 // import PartnersSection from "./components/PartnerSection";
-// import OurService from "./components/OurService";
+import OurService from "./components/OurService";
 import Footer from "./components/Footer"
 import ContactForm from "./components/ContactForm";
 // import InfoSection from "./components/InfoSection";
@@ -13,7 +13,7 @@ function App() {
       <Navbar />
       <HeroSection />
       {/* <PartnersSection /> */}
-      {/* <OurService/> */}
+      <OurService/>
       {/* <InfoSection/> */}
       <ContactForm/>
       <Footer/>
