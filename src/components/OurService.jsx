@@ -13,8 +13,8 @@ function OurService() {
             <div>
                 <div className="my-10 text-center">
                     <h2 className="relative text-xl font-bold">
-                        <span className="absolute left-0  top-2/4 w-[44%] border-t-2 border-blue-500"></span>
-                        <span className="relative z-10 px-5">Our Services</span>
+                        <span className="absolute left-0  top-2/4 w-[44%] border-t-2 border-blue-500 mr-12"></span>
+                        <span className="relative z-10 px-5 ">Our Services</span>
                         <span className="absolute right-0  top-2/4 w-[44%] border-t-2 border-blue-500"></span>
                     </h2>
                 </div>
