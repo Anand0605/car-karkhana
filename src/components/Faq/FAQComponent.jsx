@@ -1,55 +1,64 @@
-// import React from "react";
-// import {
-//   Accordion,
-//   AccordionItem,
-//   AccordionButton,
-//   AccordionPanel,
-//   Box,
-//   AccordionIcon,
-//   Text,
-// } from "@chakra-ui/react";
+import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus, faMinus } from '@fortawesome/free-solid-svg-icons';
+import { faqAccordionData } from './FaqQna.data'
 
-// const faqs = [
-//   {
-//     question: "How does Skyscanner work?",
-//     answer:
-//       "Skyscanner is a travel search engine that helps you find and compare flights from different airlines and travel agencies.",
-//   },
-//   {
-//     question: "How can I find the cheapest flight using Skyscanner?",
-//     answer:
-//       "Use our flexible search options to compare prices across different dates and destinations. Set up price alerts to track fare changes.",
-//   },
-//   {
-//     question: "What about car hire?",
-//     answer:
-//       "Skyscanner offers car rental comparisons from major providers. Search and compare prices to find the best deal for your trip.",
-//   },
-// ];
+const middleElement = Math.ceil(faqAccordionData?.length / 2);
 
-// export default function FAQ() {
-//   return (
-//     <Box w="full" maxW="xl" mx="auto" px={4} py={8}>
-//       <Text fontSize="2xl" fontWeight="bold" mb={4}>
-//         Customer Support FAQs
-//       </Text>
-//       <Accordion allowToggle>
-//         {faqs.map((faq, index) => (
-//           <AccordionItem key={index} border="none">
-//             <h2>
-//               <AccordionButton _expanded={{ bg: "blue.100", color: "blue.800" }}>
-//                 <Box flex="1" textAlign="left" fontWeight="medium">
-//                   {faq.question}
-//                 </Box>
-//                 <AccordionIcon />
-//               </AccordionButton>
-//             </h2>
-//             <AccordionPanel pb={4}>
-//               <Text color="gray.600">{faq.answer}</Text>
-//             </AccordionPanel>
-//           </AccordionItem>
-//         ))}
-//       </Accordion>
-//     </Box>
-//   );
-// }
+export const FAQComponent = () => {
+    return (
+        <div className="w-full pl-4 pt-5">
+            <h2 className="text-2xl font-bold pl-4 pt-5">Customer Support with FAQs </h2>
+            <div className='grid grid-cols-2 gap-2 w-full pt-5'>
+                <div >
+                    {
+                        faqAccordionData.slice(0, middleElement)?.map(data => {
+                            return (
+                                <Accordion key={data.id} title={data.title}>
+                                    <p>
+                                        {data.content}
+                                    </p>
+                                </Accordion>
+                            )
+                        })
+                    }
+                </div>
+                <div>
+                    {
+                        faqAccordionData.slice(middleElement)?.map(data => {
+                            return (
+                                <Accordion key={data.id} title={data.title}>
+                                    <p>
+                                        {data.content}
+                                    </p>
+                                </Accordion>
+                            )
+                        })
+                    }
+                </div>
+            </div>
+        </div>
+    );
+};
+
+const Accordion = ({ title, children }) => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    return (
+        <div className="mb-2">
+            <button
+                onClick={() => setIsOpen(!isOpen)}
+                className={`w-full flex justify-between items-center text-left py-4 px-6 text-base font-medium cursor-pointer transition-all duration-400 border-b`}
+            >
+                <span>{title}</span>
+                <FontAwesomeIcon icon={isOpen ? faMinus : faPlus} />
+            </button>
+            {/* Hide or show content based on isOpen, no layout shift */}
+            <div
+                className={`w-full ${isOpen ? 'block' : 'hidden'} px-6 py-4 bg-white border-t border-gray-300`}
+            >
+                {children}
+            </div>
+        </div>
+    );
+};

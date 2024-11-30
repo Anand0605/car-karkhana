@@ -1,12 +1,8 @@
-
 import Navbar from "./components/Navbar";
 import OurService from "./components/OurService";
-import Footer from "./components/Footer"
-// import ContactForm from "./components/ContactForm";
-// import InfoSection from "./components/InfoSection";
-import {CarInfoSelect} from './components/CarInfoSelect'
-// import FAQComponent from "./components/Faq/FAQComponent";
-// import { ChakraProvider } from "@chakra-ui/react";
+import Footer from "./components/Footer";
+import { CarInfoSelect } from './components/CarInfoSelect';
+import { FAQComponent } from './components/Faq/FAQComponent';
 
 
 function App() {
@@ -14,16 +10,9 @@ function App() {
     <div className="bg-white w-full flex flex-col justify-center items-center">
       <Navbar />
       <CarInfoSelect />
-      {/* <PartnersSection /> */}
-      <OurService/>
-      {/* <InfoSection/> */}
-      {/* <ContactForm/> */}
-      {/* <ChakraProvider>
-      <FAQ />
-    </ChakraProvider> */}
-      {/* <FAQComponent/> */}
-      <Footer/>
-      
+      <OurService />
+      <FAQComponent />
+      <Footer />
     </div>
   );
 }
