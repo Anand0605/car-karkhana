@@ -37,9 +37,9 @@ function OurService() {
             <div>
             <div className="my-5 text-center">
                     <h2 className="relative text-xl font-bold">
-                        <span className="absolute left-0  top-2/4 w-[44%] border-t-2 border-blue-500"></span>
-                        <span className="relative z-10 px-5">Our Services</span>
-                        <span className="absolute right-0  top-2/4 w-[44%] border-t-2 border-blue-500"></span>
+                        <span className="absolute left-0  top-2/4 w-[43%] border-t-2 border-blue-500"></span>
+                        <span className="relative px-5">Our Services</span>
+                        <span className="absolute right-0  top-2/4 w-[43%] border-t-2 border-blue-500"></span>
                     </h2>
                 </div>
 
@@ -82,7 +82,7 @@ function OurService() {
                 <div className="my-10 text-center">
                     <h2 className="relative text-xl font-bold">
                         <span className="absolute left-0  top-2/4 w-[44%] border-t-2 border-blue-500"></span>
-                        <span className="relative z-10 px-5">Assistance</span>
+                        <span className="relative  px-5 ">Assistance</span>
                         <span className="absolute right-0  top-2/4 w-[44%] border-t-2 border-blue-500"></span>
                     </h2>
                 </div>

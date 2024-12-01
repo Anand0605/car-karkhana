@@ -67,13 +67,13 @@ export function CarInfoSelect() {
         <div className="w-full p-4 flex justify-start items-start gap-5 flex-wrap border text-black shadow-md bg-white h-96 overflow-y-auto">
           <div className="w-full flex justify-between relative">
             <span><FaArrowLeftLong /> Select your <span className="font-semibold">{selectedTab}</span> of your Car</span>
-            <input type="text" placeholder="search Brand" className="border border-black w-1/3 p-2" onChange={(e) => setSearchText(e.target.value)} />
+            <input type="text" placeholder="search Brand" className="border rounded-md border-black w-1/3 p-2" onChange={(e) => setSearchText(e.target.value)} />
             <span className="absolute right-2 top-2.5 text-2xl"><CiSearch /></span>
           </div>
           <div>
             <span className="font-semibold text-xl pl-1">All Brands</span>
           </div>
-          <div>
+          <div className="">
             {selectedTab
               ? carOptions[selectedTab]?.filter(data => selectedTab === "brand" ? data.title.includes(searchText) : data.includes(searchText))?.map((value, idx) => {
                 return selectedTab === "brand" ? (
@@ -81,20 +81,20 @@ export function CarInfoSelect() {
                     key={idx}
                     onClick={() => handleSelectValues(selectedTab, value?.title)}
                     className={classNames(
-                      "cursor-pointer rounded border-2",
+                      "cursor-pointer rounded border-2 p-1 m-2 ",
                       {
                         ["border-blue-400"]: value?.title === selectedValues?.[selectedTab],
                       }
                     )}
                   >
-                    <img src={value?.src} alt={value?.alt} className="w-20 object-fit h-16" />
+                    <img src={value?.src} alt={value?.alt} className="w-20 object-contain h-16" />
                   </button>
                 ) : (
                   <button
                     key={idx}
                     onClick={() => handleSelectValues(selectedTab, value)}
                     className={classNames(
-                      "cursor-pointer bg-gray-300 px-3 py-1 rounded border-2",
+                      "cursor-pointer bg-gray-300 px-3 py-1 rounded border-2 ",
                       {
                         ["border-blue-400"]: value === selectedValues?.[selectedTab],
                       }

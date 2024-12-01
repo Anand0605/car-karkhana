@@ -1,63 +1,128 @@
 export const carOptions = {
     brand: [
       {
-        title: "Maruti Suzuki",
-        src:"../../../public/images/Brands/",
+        title: "Audi",
+        src:"../../../public/images/Brands/Audi.jpg",
         alt: ""
       },
       {
-        title: "Nissan",
-        src: "https://1000logos.net/wp-content/uploads/2022/08/Maruti-Suzuki-Logo-2000.png",
+        title: "Bmw",
+        src:"../../../public/images/Brands/bmw.jpg",
         alt: ""
       },
       {
-        title: "Toyota",
-        src: "https://1000logos.net/wp-content/uploads/2022/08/Maruti-Suzuki-Logo-2000.png",
+        title: "Chevrolet",
+        src:"../../../public/images/Brands/chevrolet.jpg",
         alt: ""
       },
       {
-        title: "Lamborghini",
-        src: "https://1000logos.net/wp-content/uploads/2022/08/Maruti-Suzuki-Logo-2000.png",
+        title: "Citroen",
+        src:"../../../public/images/Brands/citroen.jpg",
+        alt: ""
+      },
+      {
+        title: "Datsun",
+        src:"../../../public/images/Brands/datsun.jpg",
+        alt: ""
+      },
+      {
+        title: "Fiat",
+        src:"../../../public/images/Brands/fiat.jpg",
         alt: ""
       },
       {
         title: "Ford",
-        src: "https://1000logos.net/wp-content/uploads/2022/08/Maruti-Suzuki-Logo-2000.png",
+        src:"../../../public/images/Brands/ford.jpg",
         alt: ""
       },
       {
-        title: "Mercedes",
-        src: "https://1000logos.net/wp-content/uploads/2022/08/Maruti-Suzuki-Logo-2000.png",
+        title: "Honda",
+        src:"../../../public/images/Brands/Honda.jpg",
         alt: ""
       },
       {
-        title: "Audi",
-        src: "https://1000logos.net/wp-content/uploads/2022/08/Maruti-Suzuki-Logo-2000.png",
+        title: "Hyundai",
+        src:"../../../public/images/Brands/Hyundai.jpg",
+        alt: ""
+      },
+      {
+        title: "jaguar",
+        src:"../../../public/images/Brands/jaguar.jpg",
+        alt: ""
+      },
+      {
+        title: "Jeep",
+        src:"../../../public/images/Brands/jeep.jpg",
         alt: ""
       },
       {
         title: "Kia",
-        src: "https://1000logos.net/wp-content/uploads/2022/08/Maruti-Suzuki-Logo-2000.png",
+        src:"../../../public/images/Brands/kia.jpg",
         alt: ""
       },
       {
-        title: "Volkswagen",
-        src: "https://1000logos.net/wp-content/uploads/2022/08/Maruti-Suzuki-Logo-2000.png",
+        title: "Land-Rover",
+        src:"../../../public/images/Brands/land-Rover.jpg",
         alt: ""
       },
       {
-        title: "BMW",
-        src: "https://1000logos.net/wp-content/uploads/2022/08/Maruti-Suzuki-Logo-2000.png",
+        title: "Mahindra",
+        src:"../../../public/images/Brands/mahindra.jpg",
         alt: ""
       },
       {
-        title: "Renault",
-        src: "https://1000logos.net/wp-content/uploads/2022/08/Maruti-Suzuki-Logo-2000.png",
+        title: "Maruti",
+        src:"../../../public/images/Brands/Maruti-suzuki.jpg",
+        alt: ""
+      },
+      {
+        title: "Mg",
+        src:"../../../public/images/Brands/mg.jpg",
+        alt: ""
+      },
+      {
+        title: "Mini",
+        src:"../../../public/images/Brands/mini.jpg",
+        alt: ""
+      },
+      {
+        title: "Nisan",
+        src:"../../../public/images/Brands/nisan.jpg",
         alt: ""
       },
       {
         title: "Mitsubishi",
-        src: "https://1000logos.net/wp-content/uploads/2022/08/Maruti-Suzuki-Logo-2000.png",
+        src:"../../../public/images/Brands/mitsubishi.jpg",
+        alt: ""
+      },
+      {
+        title: "Renault",
+        src:"../../../public/images/Brands/Renault.jpg",
+        alt: ""
+      },
+      {
+        title: "Skoda",
+        src:"../../../public/images/Brands/skoda.jpg",
+        alt: ""
+      },
+      {
+        title: "Tata",
+        src:"../../../public/images/Brands/tata.jpg",
+        alt: ""
+      },
+      {
+        title: "Toyata",
+        src:"../../../public/images/Brands/toyata.jpg",
+        alt: ""
+      },
+      {
+        title: "Volkswagen",
+        src:"../../../public/images/Brands/Volkswagen.jpg",
+        alt: ""
+      },
+      {
+        title: "Volvo",
+        src:"../../../public/images/Brands/volvo.jpg",
         alt: ""
       },
     ],
