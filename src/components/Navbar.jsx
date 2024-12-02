@@ -1,6 +1,22 @@
-import { useState, useRef, useEffect } from 'react';
+import { useRef, useState } from "react";
+import { CloseButton } from "../components/ui/close-button"
 import { FaChevronDown, FaBars, FaTimes } from 'react-icons/fa';
+
+
+import {
+  DrawerActionTrigger,
+  DrawerBackdrop,
+  DrawerBody,
+  DrawerCloseTrigger,
+  DrawerContent,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerRoot,
+  DrawerTitle,
+  DrawerTrigger,
+} from "../components/ui/drawer"
 import LoginIcon from '../../public/images/car-brands/loginicon.png';
+
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -53,52 +69,51 @@ export default function Navbar() {
             <img src={LoginIcon} alt="Login Icon" />
             <p className="mt-1">Login</p>
           </div>
-          <button onClick={() => setIsMenuOpen(!isMenuOpen)}>
-            {isMenuOpen ? (
-              <FaTimes className="text-white text-2xl" />
-            ) : (
-              <FaBars className="text-white text-2xl" />
-            )}
-          </button>
-          <p>Menu</p>
+          <DrawerRoot>
+            <DrawerBackdrop />
+            <DrawerTrigger asChild>
+              <CloseButton variant="outline" size="sm">
+                <button className="flex justify-center items-center gap-2 px-3"  onClick={() => setIsMenuOpen(!isMenuOpen)}>
+                  <FaBars className="text-white text-2xl" /> Menu
+                </button>
+              </CloseButton>
+            </DrawerTrigger>
+            <DrawerContent>
+              <DrawerHeader>
+                <DrawerTitle className="text-xl font-bold pb-2 w-full">Cars-Karkhana
+                </DrawerTitle>
+                <hr className="h-1 w-full" />
+              </DrawerHeader>
+              <DrawerBody>
+                <ul className="space-y-6 flex flex-col">
+                  <li className="flex flex-col justify-start items-start">
+                    <a href="#insurance" className="text-lg text-start text-black font-semibold">
+                      Insurance
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#loans" className="text-lg text-black font-semibold">
+                      Loans
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#sell" className="text-lg text-black font-semibold">
+                      About
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#contact" className="text-lg text-black font-semibold">
+                      Contact us
+                    </a>
+                  </li>
+                </ul>
+              </DrawerBody>
+              <DrawerCloseTrigger />
+            </DrawerContent>
+          </DrawerRoot>
         </div>
       </div>
       <hr className="mt-2" />
-      {isMenuOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-10">
-          <div className="fixed right-0 top-0 w-1/4 bg-slate-300 p-4 h-full flex flex-col items-center">
-            <button
-              className="text-black text-2xl mb-6 self-start"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              <FaTimes />
-            </button>
-            <h1 className="text-xl font-bold text-black mb-5">Cars-Karkhana</h1>
-            <ul className="space-y-6 flex items-center flex-col">
-              <li>
-                <a href="#insurance" className="text-lg text-black font-semibold">
-                  Insurance
-                </a>
-              </li>
-              <li>
-                <a href="#loans" className="text-lg text-black font-semibold">
-                  Loans
-                </a>
-              </li>
-              <li>
-                <a href="#sell" className="text-lg text-black font-semibold">
-                  About
-                </a>
-              </li>
-              <li>
-                <a href="#contact" className="text-lg text-black font-semibold">
-                  Contact us
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      )}
       {isLoginModalOpen && (
         <div className="fixed inset-0 flex justify-center items-center z-20">
           <button onClick={() => setIsLoginModalOpen(false)} className='w-full h-full bg-black/40 absolute inset-0' />
