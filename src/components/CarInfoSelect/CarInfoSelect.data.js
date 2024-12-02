@@ -1,138 +1,239 @@
-export const carOptions = {
-    brand: [
+export const carSearchDetails = [
+  {
+    key: "Brand",
+    details: [
       {
         title: "Audi",
-        src:"../../../public/images/Brands/Audi.jpg",
-        alt: ""
+        image: {
+          src: "../../../public/images/Brands/Audi.jpg",
+          alt: "Audi"
+        }
       },
       {
-        title: "Bmw",
-        src:"../../../public/images/Brands/bmw.jpg",
-        alt: ""
+        title: "BMW",
+        image: {
+          src: "../../../public/images/Brands/bmw.jpg",
+          alt: "BMW"
+        }
       },
       {
         title: "Chevrolet",
-        src:"../../../public/images/Brands/chevrolet.jpg",
-        alt: ""
-      },
-      {
-        title: "Citroen",
-        src:"../../../public/images/Brands/citroen.jpg",
-        alt: ""
+        image: {
+          src: "../../../public/images/Brands/chevrolet.jpg",
+          alt: "Chevrolet"
+        }
       },
       {
         title: "Datsun",
-        src:"../../../public/images/Brands/datsun.jpg",
-        alt: ""
+        image: {
+          src: "../../../public/images/Brands/datsun.jpg",
+          alt: "Datsun"
+        }
       },
       {
         title: "Fiat",
-        src:"../../../public/images/Brands/fiat.jpg",
-        alt: ""
+        image: {
+          src: "../../../public/images/Brands/fiat.jpg",
+          alt: "Fiat"
+        }
       },
       {
         title: "Ford",
-        src:"../../../public/images/Brands/ford.jpg",
-        alt: ""
+        image: {
+          src: "../../../public/images/Brands/ford.jpg",
+          alt: "Ford"
+        }
       },
       {
         title: "Honda",
-        src:"../../../public/images/Brands/Honda.jpg",
-        alt: ""
+        image: {
+          src: "../../../public/images/Brands/Honda.jpg",
+          alt: "Honda"
+        }
       },
       {
         title: "Hyundai",
-        src:"../../../public/images/Brands/Hyundai.jpg",
-        alt: ""
+        image: {
+          src: "../../../public/images/Brands/Hyundai.jpg",
+          alt: "Hyundai"
+        }
       },
       {
-        title: "jaguar",
-        src:"../../../public/images/Brands/jaguar.jpg",
-        alt: ""
+        title: "Jaguar",
+        image: {
+          src: "../../../public/images/Brands/jaguar.jpg",
+          alt: "Jaguar"
+        }
       },
       {
         title: "Jeep",
-        src:"../../../public/images/Brands/jeep.jpg",
-        alt: ""
+        image: {
+          src: "../../../public/images/Brands/jeep.jpg",
+          alt: "Jaguar"
+        }
       },
       {
         title: "Kia",
-        src:"../../../public/images/Brands/kia.jpg",
-        alt: ""
+        image: {
+          src: "../../../public/images/Brands/kia.jpg",
+          alt: "Kia"
+        }
       },
       {
         title: "Land-Rover",
-        src:"../../../public/images/Brands/land-Rover.jpg",
-        alt: ""
+        image: {
+          src: "../../../public/images/Brands/land-Rover.jpg",
+          alt: "Land-Rover"
+        }
       },
       {
         title: "Mahindra",
-        src:"../../../public/images/Brands/mahindra.jpg",
-        alt: ""
+        image: {
+          src: "../../../public/images/Brands/mahindra.jpg",
+          alt: "Mahindra"
+        }
       },
       {
-        title: "Maruti",
-        src:"../../../public/images/Brands/Maruti-suzuki.jpg",
-        alt: ""
+        title: "Maruti-Suzuki",
+        image: {
+          src: "../../../public/images/Brands/Maruti-suzuki.jpg",
+          alt: "Maruti-Suzuki"
+        }
       },
       {
         title: "Mg",
-        src:"../../../public/images/Brands/mg.jpg",
-        alt: ""
+        image: {
+          src: "../../../public/images/Brands/mg.jpg",
+          alt: "Mg"
+        }
       },
       {
         title: "Mini",
-        src:"../../../public/images/Brands/mini.jpg",
-        alt: ""
-      },
-      {
-        title: "Nisan",
-        src:"../../../public/images/Brands/nisan.jpg",
-        alt: ""
+        image: {
+          src: "../../../public/images/Brands/mini.jpg",
+          alt: "Mini"
+        }
       },
       {
         title: "Mitsubishi",
-        src:"../../../public/images/Brands/mitsubishi.jpg",
-        alt: ""
+        image: {
+          src: "../../../public/images/Brands/mitsubishi.jpg",
+          alt: "Mitsubishi"
+        }
       },
       {
-        title: "Renault",
-        src:"../../../public/images/Brands/Renault.jpg",
-        alt: ""
+        title: "Nisan",
+        image: {
+          src: "../../../public/images/Brands/nisan.jpg",
+          alt: "Nisan"
+        }
+      },
+      {
+        title: "Citroen",
+        image: {
+          src: "../../../public/images/Brands/Renault.jpg",
+          alt: "Citroen"
+        }
       },
       {
         title: "Skoda",
-        src:"../../../public/images/Brands/skoda.jpg",
-        alt: ""
+        image: {
+          src: "../../../public/images/Brands/skoda.jpg",
+          alt: "Skoda"
+        }
       },
       {
         title: "Tata",
-        src:"../../../public/images/Brands/tata.jpg",
-        alt: ""
-      },
-      {
+        image: {
+          src: "../../../public/images/Brands/tata.jpg",
+          alt: "Tata"
+        }
+      },{
         title: "Toyata",
-        src:"../../../public/images/Brands/toyata.jpg",
-        alt: ""
+        image: {
+          src: "../../../public/images/Brands/toyata.jpg",
+          alt: "Toyata"
+        }
       },
       {
         title: "Volkswagen",
-        src:"../../../public/images/Brands/Volkswagen.jpg",
-        alt: ""
+        image: {
+          src: "../../../public/images/Brands/Volkswagen.jpg",
+          alt: "Volkswagen"
+        }
       },
       {
         title: "Volvo",
-        src:"../../../public/images/Brands/volvo.jpg",
-        alt: ""
+        image: {
+          src: "../../../public/images/Brands/volvo.jpg",
+          alt: "Volvo"
+        }
       },
-    ],
-    Year: ["2023", "2022", "2021", "2020", "2019"],
-    Model: ["Swift", "Alto", "Baleno", "Creta", "i20"],
-    Variant: ["LXI", "VXI", "ZXI", "Alpha", "Beta"],
-    Owner: ["1st Owner", "2nd Owner", "3rd Owner", "4th Owner"],
-    RTO: ["Gurgaon", "Delhi", "Noida", "Mumbai", "Bangalore"],
-    "KM Driven": ["0 to 10,000 Km", "10,000 to 20,000 Km", "20,000 to 30,000 Km", "30,000 to 40,000 Km","40,000 to 50,000 Km","50,000 to 60,000 Km","60,000 to 70,000 Km","70,000 to 80,000 Km","80,000 to 90,000 Km","90,000 to 100,000 Km","Above 100000"],
-};
-
-// Object.keys(carOptions) 
-// ["Brand", "Year", "RTO", "Model", "Varient", "Owner", "KM Driven"]
+    ]
+  },
+  {
+    key: "Year",
+    details: [
+      { title: "2023" },
+      { title: "2022" },
+      { title: "2021" },
+      { title: "2020" },
+      { title: "2019" }
+    ]
+  },
+  {
+    key: "Model",
+    details: [
+      { title: "Swift" },
+      { title: "Alto" },
+      { title: "Baleno" },
+      { title: "Creta" },
+      { title: "i20" }
+    ]
+  },
+  {
+    key: "Variant",
+    details: [
+      { title: "LXI" },
+      { title: "VXI" },
+      { title: "ZXI" },
+      { title: "Alpha" },
+      { title: "Beta" }
+    ]
+  },
+  {
+    key: "Owner",
+    details: [
+      { title: "1st Owner" },
+      { title: "2nd Owner" },
+      { title: "3rd Owner" },
+      { title: "4th Owner" }
+    ]
+  },
+  {
+    key: "RTO",
+    details: [
+      { title: "Gurgaon" },
+      { title: "Delhi" },
+      { title: "Noida" },
+      { title: "Mumbai" },
+      { title: "Bangalore" }
+    ]
+  },
+  {
+    key: "KM Driven",
+    details: [
+      { title: "0 to 10,000 Km" },
+      { title: "10,000 to 20,000 Km" },
+      { title: "20,000 to 30,000 Km" },
+      { title: "30,000 to 40,000 Km" },
+      { title: "40,000 to 50,000 Km" },
+      { title: "50,000 to 60,000 Km" },
+      { title: "60,000 to 70,000 Km" },
+      { title: "70,000 to 80,000 Km" },
+      { title: "80,000 to 90,000 Km" },
+      { title: "90,000 to 100,000 Km" },
+      { title: "Above 100000" }
+    ]
+  },
+]

@@ -5,30 +5,12 @@ import LoginIcon from '../../public/images/car-brands/loginicon.png';
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
-
   const modalRef = useRef(null);
 
   const [formData, setFormData] = useState({
     firstName: '',
     email: '',
-
   });
-
-  useEffect(() => {
-    const handleOutsideClick = (e) => {
-      if (modalRef.current && !modalRef.current.contains(e.target)) {
-        setIsLoginModalOpen(false);
-      }
-    };
-    if (isLoginModalOpen) {
-      document.addEventListener('mousedown', handleOutsideClick);
-    } else {
-      document.removeEventListener('mousedown', handleOutsideClick);
-    }
-    return () => {
-      document.removeEventListener('mousedown', handleOutsideClick);
-    };
-  }, [isLoginModalOpen]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -40,8 +22,8 @@ export default function Navbar() {
 
   const handleLoginSubmit = (e) => {
     e.preventDefault();
-    const { firstName, email} = formData;
-    if (!firstName || !email ) {
+    const { firstName, email } = formData;
+    if (!firstName || !email) {
       // alert('Please fill in all fields before submitting.');
       return;
     }
@@ -118,8 +100,9 @@ export default function Navbar() {
         </div>
       )}
       {isLoginModalOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-20">
-          <div ref={modalRef} className="bg-white w-11/12 md:w-1/3 rounded-lg p-6 relative">
+        <div className="fixed inset-0 flex justify-center items-center z-20">
+          <button onClick={() => setIsLoginModalOpen(false)} className='w-full h-full bg-black/40 absolute inset-0' />
+          <div className="bg-white z-1 w-11/12 md:w-1/3 rounded-lg p-6 relative">
             <h2 className="text-2xl font-semibold mb-4 text-center text-black">
               Login
             </h2>
