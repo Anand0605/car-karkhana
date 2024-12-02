@@ -74,7 +74,7 @@ export function CarInfoSelect() {
             Continue
           </button>
         </div>
-        <div className="w-full p-4 flex flex-col justify-start items-start gap-5 flex-wrap border text-black shadow-md bg-white h-96 overflow-y-auto">
+        <div className="w-full p-4 flex justify-start items-start gap-5 flex-wrap border text-black shadow-md bg-white h-96 overflow-y-auto">
           <div className="w-full flex justify-between">
             <button className={`${selectedTabIndex !== 0 ? "" : "invisible"}`} onClick={handleBack}><FaArrowLeftLong /></button>
             <div className="relative w-[200px]">
@@ -85,7 +85,7 @@ export function CarInfoSelect() {
           <h2 className="text-lg">Select your <span className="font-semibold">{carSearchDetails[selectedTabIndex]?.key}</span> of your Car</h2>
           <div>
             <h3 className="font-semibold text-xl pl-1">All Brands</h3>
-            <div className="">
+            <div className="flex justify-center flex-wrap">
               {searchResult?.map(({ title, image }, idx) =>
                 <button
                   key={idx}
@@ -98,7 +98,7 @@ export function CarInfoSelect() {
                   )}
                 >
                   {
-                    image?.src && <img src={image?.src} alt={image?.alt} className="w-20 object-contain h-16" />
+                    image?.src && <img src={image?.src} alt={image?.alt} className="w-24 object-contain h-16" />
                   }
                   {title}
                 </button>
