@@ -11,19 +11,18 @@ function Modal({ onClose, onSubmit }) {
   return (
     <div className="fixed inset-0 flex justify-center items-center bg-black bg-opacity-50">
       <div className="bg-white p-6 rounded-lg shadow-lg w-[90%] max-w-md">
-        <h2 className="text-xl font-semibold mb-4 text-black">Enter Your Mobile Number</h2>
+        <h2 className="text-xl font-semibold mb-4 text-black">
+          Enter Your Mobile Number
+        </h2>
         <input
-          type="Number"
+          type="number"
           placeholder="Enter mobile number"
           className="border p-2 w-full mb-4 rounded text-black"
           value={mobileNumber}
           onChange={(e) => setMobileNumber(e.target.value)}
         />
         <div className="flex justify-end gap-4">
-          <button
-            className="bg-gray-300 px-4 py-2 rounded"
-            onClick={onClose}
-          >
+          <button className="bg-gray-300 px-4 py-2 rounded" onClick={onClose}>
             Cancel
           </button>
           <button
@@ -44,7 +43,7 @@ export function CarInfoSelect() {
   const [selectedValues, setSelectedValues] = useState({});
   const [searchText, setSearchText] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [isAuthOpen, setIsAuthOpen] = useState(false)
+  const [isAuthOpen, setIsAuthOpen] = useState(false);
 
   const handleTabSelect = (tabIndex) => {
     setSelectedTabIndex(tabIndex);
@@ -58,9 +57,8 @@ export function CarInfoSelect() {
     }));
     if (selectedTabIndex !== carSearchDetails.length - 1) {
       setSelectedTabIndex((prev) => prev + 1);
-    }
-    if(selectedTabIndex===carSearchDetails.length - 1){
-      setIsAuthOpen(true)
+    } else {
+      setIsAuthOpen(true);
     }
   };
 
@@ -68,7 +66,7 @@ export function CarInfoSelect() {
     if (Object.keys(selectedValues).length !== carSearchDetails.length) {
       alert("Please select all values.");
     } else {
-      setIsModalOpen(true); // Open the modal
+      setIsModalOpen(true);
     }
   };
 
@@ -113,11 +111,12 @@ export function CarInfoSelect() {
                 onClick={() => handleTabSelect(index)}
                 className="cursor-pointer transition-all duration-300 font-semibold flex flex-col gap-1"
               >
-                <span>
-                  {!selectedValues?.[tabName] ? tabName : <p className="py-2"></p>}
-                </span>
-                <span className="truncate text-xs text-black/50 pb-1">
-                  {selectedValues?.[tabName] ? selectedValues[tabName] : "Select Value"}
+                <span className="py-2 text-nowrap">
+                  {!selectedValues?.[tabName] ? (
+                    tabName
+                  ) : (
+                    <p className="">{selectedValues[tabName]}</p>
+                  )}
                 </span>
               </button>
               <span
@@ -155,7 +154,7 @@ export function CarInfoSelect() {
               <input
                 type="search"
                 placeholder={`Search ${selectedKeyDetails?.key}`}
-                className="border rounded-md border-black  w-full p-2 pr-8 "
+                className="border rounded-md border-black outline-none  w-full p-2 pr-8 "
                 onChange={(e) => setSearchText(e.target.value)}
               />
               <span className="absolute right-2 top-2.5 text-2xl">
@@ -171,33 +170,51 @@ export function CarInfoSelect() {
             of your Car
           </h2>
           <div className="w-full">
-            <h3 className="font-semibold text-xl pl-1">All {carSearchDetails[selectedTabIndex]?.key}</h3>
+            <h3 className="font-semibold text-xl pl-1">
+              All {carSearchDetails[selectedTabIndex]?.key}
+            </h3>
             <div className="flex gap-6 justify-center flex-wrap">
-              {searchResult?.map(({ title, image }, idx) => (
-                <button
-                  key={idx}
-                  onClick={() =>
-                    handleSelectValues(carSearchDetails[selectedTabIndex]?.key, title)
-                  }
-                  className={classNames("cursor-pointer rounded border-2 p-1 m-2 bg-gray-50", {
-                    ["border-blue-400"]:
-                      title === selectedValues?.[carSearchDetails[selectedTabIndex]?.key],
-                    ["w-11/12"]: !image?.src,
-                  })}
-                >
-                  {image?.src && (
-                    <img
-                      src={image?.src}
-                      alt={image?.alt}
-                      className="w-24 object-contain h-16 bg-blend-overlay"
-                    />
-                  )}
-                  {title}
-                </button>
-              ))}
-              {
-                isAuthOpen && <p>mobile number</p>
-              }
+              {!isAuthOpen &&
+                searchResult?.map(({ title, image }, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() =>
+                      handleSelectValues(
+                        carSearchDetails[selectedTabIndex]?.key,
+                        title
+                      )
+                    }
+                    className={classNames(
+                      "cursor-pointer rounded border-2 p-1 m-2 bg-gray-50",
+                      {
+                        ["border-blue-400"]:
+                          title ===
+                          selectedValues?.[
+                            carSearchDetails[selectedTabIndex]?.key
+                          ],
+                        ["w-11/12"]: !image?.src,
+                      }
+                    )}
+                  >
+                    {image?.src && (
+                      <img
+                        src={image?.src}
+                        alt={image?.alt}
+                        className="w-24 object-contain h-16 bg-blend-overlay"
+                      />
+                    )}
+                    {title}
+                  </button>
+                ))}
+              {isAuthOpen && (
+                <div className=" w-80 m-auto flex flex-col gap-4 border rounded-md border-blue-700 py-4 px-8 ">
+                  <h2 className="font-semibold">Enter Your Contact Details</h2>
+                  <input type="number" placeholder="Enter number" className=" rounded-md px-1 py-1 outline-none border" />
+                  <div className="flex justify-end">
+                    <button className="px-4 py-2 rounded-md bg-blue-700 text-white font-semibold">Submit</button>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
