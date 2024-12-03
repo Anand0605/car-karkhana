@@ -46,11 +46,11 @@ function OurService() {
                 {/* Services Section */}
                 <div className="flex justify-around space-x-8 mt-10">
                     {/* Insurance Card */}
-                    <div className="text-center">
+                    <div className="text-center ">
                         <img
                             src={Carfirst}
                             alt="Insurance"
-                            className="w-40 h-40 mx-auto"
+                            className="w-48 h-48 mx-auto object-contain"
                         />
                         <h3 className="text-lg font-semibold mt-4">Insurance</h3>
                     </div>
@@ -60,7 +60,7 @@ function OurService() {
                         <img
                             src={Carsecond}
                             alt="Price Compare"
-                            className="w-40 h-40 mx-auto"
+                            className="w-48 h-48 mx-auto object-contain"
                         />
                         <h3 className="text-lg font-semibold mt-4">Price Compare</h3>
                     </div>
@@ -70,7 +70,7 @@ function OurService() {
                         <img
                             src={Carthired}
                             alt="Loans"
-                            className="w-40 h-40 mx-auto"
+                            className="w-48 h-48 mx-auto object-contain"
                         />
                         <h3 className="text-lg font-semibold mt-4">Loans</h3>
                     </div>

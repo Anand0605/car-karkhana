@@ -25,6 +25,7 @@ export default function Navbar() {
 
   const [formData, setFormData] = useState({
     firstName: '',
+    lastName: '',
     email: '',
   });
 
@@ -71,24 +72,24 @@ export default function Navbar() {
           </div>
           <DrawerRoot>
             <DrawerBackdrop />
-            <DrawerTrigger asChild>
-              <CloseButton variant="outline" size="sm">
-                <button className="flex justify-center items-center gap-2 px-3"  onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            <DrawerTrigger asChild >
+              <CloseButton variant="outline" size="sm"  >
+                <button className="flex justify-center items-center gap-2 px-3" onClick={() => setIsMenuOpen(!isMenuOpen)}>
                   <FaBars className="text-white text-2xl" /> Menu
                 </button>
               </CloseButton>
             </DrawerTrigger>
-            <DrawerContent>
-              <DrawerHeader>
+            <DrawerContent  className="w-64">
+              <DrawerHeader >
                 <DrawerTitle className="text-xl font-bold pb-2 w-full">Cars-Karkhana
                 </DrawerTitle>
                 <hr className="h-1 w-full" />
               </DrawerHeader>
-              <DrawerBody>
-                <ul className="space-y-6 flex flex-col">
+              <DrawerBody className="p-4" >
+                <ul className="space-y-3 flex flex-col">
                   <li className="flex flex-col justify-start items-start">
-                    <a href="#insurance" className="text-lg text-start text-black font-semibold">
-                      Insurance
+                    <a href="#home" className="text-lg text-start text-black font-semibold">
+                      Home
                     </a>
                   </li>
                   <li>
@@ -97,13 +98,33 @@ export default function Navbar() {
                     </a>
                   </li>
                   <li>
-                    <a href="#sell" className="text-lg text-black font-semibold">
+                    <a href="#insurance" className="text-lg text-black font-semibold">
+                      Insurance
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#about" className="text-lg text-black font-semibold">
                       About
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#FAQs" className="text-lg text-black font-semibold">
+                      FAQs
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#Term of Condition" className="text-lg text-black font-semibold">
+                      Term of Condition
                     </a>
                   </li>
                   <li>
                     <a href="#contact" className="text-lg text-black font-semibold">
                       Contact us
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#Help Support" className="text-lg text-black font-semibold">
+                      Help and Support
                     </a>
                   </li>
                 </ul>
@@ -122,14 +143,22 @@ export default function Navbar() {
               Login
             </h2>
             <form onSubmit={handleLoginSubmit}>
-              <div className="grid grid-cols-1 gap-4 mb-4">
+              <div className="grid grid-cols-2 gap-4 mb-4">
                 <input
                   type="text"
                   name="firstName"
                   value={formData.firstName}
                   onChange={handleInputChange}
                   placeholder="First Name"
-                  className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 text-black"
+                  className="w-full px-4 py-2 border rounded-lg  text-black"
+                />
+                <input
+                  type="text"
+                  name="lastName"
+                  value={formData.lastName}
+                  onChange={handleInputChange}
+                  placeholder="Last Name"
+                  className="w-full px-4 py-2 border rounded-lg  text-black"
                 />
               </div>
               <input
@@ -138,7 +167,7 @@ export default function Navbar() {
                 value={formData.email}
                 onChange={handleInputChange}
                 placeholder="Email"
-                className="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-400 text-black"
+                className="w-full px-4 py-2 border rounded-lg  text-black"
               />
               <button
                 type="submit"
