@@ -148,7 +148,7 @@ export const carSearchDetails = [
           src: "../../../public/images/Brands/tata.jpg",
           alt: "Tata"
         }
-      },{
+      }, {
         title: "Toyata",
         image: {
           src: "../../../public/images/Brands/toyata.jpg",
@@ -205,11 +205,26 @@ export const carSearchDetails = [
   {
     key: "Model",
     details: [
-      { title: "Swift" },
-      { title: "Alto" },
-      { title: "Baleno" },
-      { title: "Creta" },
-      { title: "i20" }
+      {
+        title: "Swift",
+        brand: "Audi"
+      },
+      {
+        title: "Alto",
+        brand: "Audi"
+      },
+      {
+        title: "Baleno",
+        brand: "Audi"
+      },
+      {
+        title: "Creta",
+        brand: "BMW"
+      },
+      {
+        title: "i20",
+        brand: "BMW"
+      },
     ]
   },
   {
@@ -330,4 +345,12 @@ export const carSearchDetails = [
       { title: "Above 100000" }
     ]
   },
+]
+
+export const fuelDetails = [
+  "Petrol", "Petrol + CNG", "Diesel", "Electric"
+]
+
+export const transmissionDetails = [
+  "Automatic", "Menual"
 ]
