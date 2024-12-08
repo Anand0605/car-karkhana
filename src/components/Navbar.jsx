@@ -74,9 +74,9 @@ export default function Navbar() {
             <DrawerBackdrop />
             <DrawerTrigger asChild >
               <CloseButton variant="outline" size="sm"  >
-                <button className="flex justify-center items-center gap-2 px-3" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+                <span className="flex justify-center items-center gap-2 px-3" onClick={() => setIsMenuOpen(!isMenuOpen)}>
                   <FaBars className="text-white text-2xl" /> Menu
-                </button>
+                </span>
               </CloseButton>
             </DrawerTrigger>
             <DrawerContent  className="w-64">
